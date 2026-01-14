@@ -1,0 +1,2 @@
+- swap all elf paramters
+- fix printf for doubels (fp78.c bug?)
