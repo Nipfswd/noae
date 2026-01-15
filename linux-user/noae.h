@@ -1,9 +1,9 @@
-#ifndef GEMU_H
-#define GEMU_H
+#ifndef NOAE_H
+#define NOAE_H
 
 #include "thunk.h"
 
-struct pt_regs {
+struct target_pt_regs {
 	long ebx;
 	long ecx;
 	long edx;
@@ -44,13 +44,13 @@ struct image_info {
 };
 
 int elf_exec(const char * filename, char ** argv, char ** envp, 
-             struct pt_regs * regs, struct image_info *infop);
+             struct target_pt_regs * regs, struct image_info *infop);
 
 void target_set_brk(char *new_brk);
 void syscall_init(void);
 long do_syscall(int num, long arg1, long arg2, long arg3, 
                 long arg4, long arg5, long arg6);
-void gemu_log(const char *fmt, ...) __attribute__((format(printf,1,2)));
+void noae_log(const char *fmt, ...) __attribute__((format(printf,1,2)));
 
 
 
