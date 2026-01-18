@@ -1,2 +1,5 @@
 *.plsignoregit
 *.commit-hist
+
+## just to be sure
+noae.commit-hist
